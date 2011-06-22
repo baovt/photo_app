@@ -5,7 +5,12 @@ gem 'rails', '3.0.7'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'mysql'
+gem 'dynamic_form'
+gem 'haml'
+gem 'haml-rails'
+gem 'authlogic'
+gem 'paperclip'
 
 # Use unicorn as the web server
 # gem 'unicorn'
