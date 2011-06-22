@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Username:
+  = @user.username
+%p
+  %b Password salt:
+  = @user.password_salt
+%p
+  %b Password hash:
+  = @user.password_hash
+%p
+  %b Persistence token:
+  = @user.persistence_token
+%p
+  %b Perishable token:
+  = @user.perishable_token
+%p
+  %b Single access token:
+  = @user.single_access_token
+%p
+  %b Last request at:
+  = @user.last_request_at
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path
