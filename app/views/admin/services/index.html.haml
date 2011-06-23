@@ -14,10 +14,10 @@
       %td= service.name
       %td= service.description
       %td= service.featured
-      %td= link_to 'Show', service
-      %td= link_to 'Edit', edit_service_path(service)
-      %td= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Show', [:admin, service]
+      %td= link_to 'Edit', edit_admin_service_path(service)
+      %td= link_to 'Destroy', [:admin, service], :confirm => 'Are you sure?', :method => :delete
 
 %br
 
-= link_to 'New Service', new_service_path
+= link_to 'New Service', new_admin_service_path

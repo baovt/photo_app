@@ -1,0 +1,96 @@
+@import reset
+
+body
+  background: #eee
+  font:
+    family: 'Lucida Grande', Verdana, Arial, sans-serif
+  
+#wrapper 
+  margin: 230px auto
+  width: 280px
+  background: #fff
+  padding: 21px 20px 4px 20px
+  position: relative
+  border: 1px solid #ddd
+  
+  .footer
+    display: block
+    text-indent: -999999px
+    position: absolute
+    bottom: -30px
+    left: 20px
+    width: 100%
+    background: url(/images/login/footer.png) left no-repeat
+    
+.flash
+  font-size: 10px
+  padding: 9px 0 8px 0
+  margin-bottom: 16px
+  text-align: center
+  width: 278px
+  
+  &.success
+    color: #000
+    background-color: #E8FFEB
+    border: 1px solid #1CE636
+    
+  &.error
+    color: #000
+    background: #FFE6E6
+    border: 1px solid #FC0000
+
+h2
+  font-size: 12px
+  font-weigh: bold
+  color: #b9cf25
+  margin-bottom: 8px
+  
+p
+  font-size: 11px
+  color: #ccc
+
+form
+  width: 280px
+    
+  .field 
+    position: relative
+    display: block
+    margin-bottom: 20px
+    width: 100%
+          
+    label 
+      position: absolute
+      top: 0
+      left: 0
+      font-size: 12px
+      color: #333
+        
+    .formError
+      font-size: 10px
+      color: #FF4D4D
+      margin: 3px 0 0 7px
+      
+    .text 
+      margin-top: 19px
+      width: 266px
+      color: #333
+      padding: 6px 5px 5px 5px
+      font-size: 14px 
+      font-weight: bold
+     
+    
+    .forgot_password
+      top: 14px
+      float: right
+      font-size: 11px
+      color: #666
+      margin-top: 10px
+      text-decoration: underline
+      
+      &:hover
+        color: #FCFCE8
+    
+  .submit     
+    input      
+      color: #333
+      font-size: 16px

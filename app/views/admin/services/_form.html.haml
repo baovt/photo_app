@@ -1,4 +1,4 @@
-= form_for @service do |f|
+= form_for [:admin, @service], :html => { :multipart => true } do |f|
   -if @service.errors.any?
     #error_explanation
       %h2= "#{pluralize(@service.errors.count, "error")} prohibited this service from being saved:"
@@ -11,9 +11,13 @@
     = f.text_field :name
   .field
     = f.label :description
-    = f.text_area :description
+    = f.text_field :description
   .field
     = f.label :featured
     = f.check_box :featured
+   
+  - f.fields_for :photos do |builder|
+    = render 'photo_fields', :f => builder
+  
   .actions
     = f.submit 'Save'

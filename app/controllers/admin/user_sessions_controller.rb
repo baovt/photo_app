@@ -12,7 +12,7 @@ class Admin::UserSessionsController < Admin::AdminController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:success] = "You've signed in!" 
-      return_or_redirect_to root_url
+      return_or_redirect_to admin_root_url
    else
       render :new
     end
@@ -22,7 +22,7 @@ class Admin::UserSessionsController < Admin::AdminController
     @user_session = UserSession.find
     @user_session.destroy
     
-    redirect_to root_url
+    redirect_to admin_root_url
   end
 
 end
