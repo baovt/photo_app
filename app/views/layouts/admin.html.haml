@@ -1,0 +1,25 @@
+!!! 5
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="Keyword" content="")
+    %meta(name="description" content="")
+    %title= title
+    = stylesheet_link_tag "admin"
+    = javascript_include_tag "jquery.min", "rails", "jquery-ui-1.8.13.custom.min.js", "admin"
+  %body
+    %section#header
+      %header
+        %h1= link_to "user", root_url
+        %nav
+          %ul
+            %li= link_to "Sign Out", admin_logout_url
+    
+    %section#content
+      - if flash[:success] 
+        .flash.success= flash[:success]
+      
+      = yield
+        
+    %footer      
+        

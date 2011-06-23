@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   acts_as_authentic do |c|
-    c.require_password_confirmation = false
+    c.require_password_confirmation = true
   end
     
   attr_accessor :password_reset, :password_confirmation

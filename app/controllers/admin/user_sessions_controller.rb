@@ -1,4 +1,4 @@
-class UserSessionsController < ApplicationController
+class Admin::UserSessionsController < Admin::AdminController
   skip_before_filter :require_user, :except => :destroy
   layout "login"
   
