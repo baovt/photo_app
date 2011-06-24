@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
     
   attr_accessor :password_reset, :password_confirmation
   
-  validates :username, :presence => true
-  validates :password, :presence => true, :if => :should_validate_password?  
-  validates :password, :length => {:within => 4..40}, :if => :should_validate_password?
-  validate  :confirm_password
+  # validates :username, :presence => true
+  # validates :password, :presence => true, :if => :should_validate_password?  
+  # validates :password, :length => {:within => 4..40}, :if => :should_validate_password?
+  # validate  :confirm_password
   
   private
     

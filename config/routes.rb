@@ -4,7 +4,7 @@ PhotoApp::Application.routes.draw do
     resources :services, :users, :user_sessions
     match "/login"   => "user_sessions#new",     :as => :login
     match "/logout"  => "user_sessions#destroy", :as => :logout
-    root :to => "users#index"
+    root :to => "services#index"
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
