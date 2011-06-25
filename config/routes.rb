@@ -1,5 +1,11 @@
 PhotoApp::Application.routes.draw do
 
+  get "basic/about"
+
+  get "basic/index"
+
+  get "basic/gallery_tags"
+
   namespace :admin do
     resources :services, :users, :user_sessions
     match "/login"   => "user_sessions#new",     :as => :login

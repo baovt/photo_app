@@ -1,14 +1,114 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>PhotoApp</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>.: DEMO :.</title>
+  <meta name='description' content='........' />
+  <meta name='keywords' content='.............' />
+  <%= stylesheet_link_tag "style" %>
+  <!--[if lte IE 7]>
+    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" %>
+  <![endif]-->
+  <%= javascript_include_tag "http://cufon.shoqolate.com/js/cufon-yui.js" %>
+  <%= javascript_include_tag "Neuton_500.font" %>
+  <script type="text/javascript">
+    Cufon.replace('.font-em, h3.head-big, h3.head-small', {hover: true});
+  </script>
+  <!--[if IE 6]>
+    <%= stylesheet_link_tag "ie" %>
+  <![endif]-->
   <%= csrf_meta_tag %>
 </head>
 <body>
+<div id="header">
+	<div class="header-inner">
+        <h1 class="logo"><a href="#">website thoi trang</a></h1>
+        <div class="topright">
+            <div class="phone-email  font-em">
+            	<span class="phone">612.767.1242</span>
+				hello@eminentdesign.com
+            </div>
+            <ul class="nav font-em">
+                <li><a href="index.html">home</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">gallery</a></li>
+                <li><a href="#">blog</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </div>
+    
+        
+        
+    </div>
+</div>
 
-<%= yield %>
+<div id="middle"><div class="middle-wrapper">
+  <%= yield %>
+  <br class="clear" />
+</div></div><!-- end #middle, end .middle-wrapper -->
+
+<div id="footer">
+	<div class="footer-inner">
+    	<div class="add-footer font-em">
+        	<h3>EMINIENT INTERIOR DESIGN</h3>
+            <p>123 Any St. <br />
+            St. Paul, MN 55355 <br />
+            805.555.5555</p>
+        </div>
+        <div class="services-footer">	
+        	<h3 class="head-big head-small">Services</h3>
+        	<ul>
+                <li><a href="#">Kitchen Design</a></li>
+                <li><a href="#">Bathroom Design</a></li>
+                <li><a href="#">Interior Design</a></li>
+                <li><a href="#">Contruction Planning</a></li>
+            </ul>
+        </div>
+        <div class="about-footer">
+        	<h3 class="head-big head-small">about</h3>
+        	<ul>
+                <li><a href="#">Awards</a></li>
+                <li><a href="#">Brandi Hagen</a></li>
+                <li><a href="#">Staff Desingers</a></li>
+            </ul>
+        </div>
+        <div class="photo-footer">
+        	<h3 class="head-big head-small">Photo GALLERIEs</h3>
+        	<ul class="photo-gal">
+                <li class="cat-1">	
+                	<ul>
+                		<li><a href="#">Living Room</a></li>
+                        <li><a href="#">Family Room</a></li>
+                        <li><a href="#">Master Bath</a></li>
+                        <li><a href="#">Guest Bath</a></li>
+                        <li><a href="#">Powder Room</a></li>
+                  	</ul>
+                </li>
+                <li class="cat-2">	
+                	<ul>
+                		<li><a href="#">Kithen </a></li>
+                        <li><a href="#">Dining Room</a></li>
+                        <li><a href="#">Wet Bar</a></li>
+                        <li><a href="#">Mud Room</a></li>
+                        <li><a href="#">Porch </a></li>
+                  	</ul>
+                </li>
+                <li class="cat-3">	
+                	<ul>
+                		<li><a href="#">Award Winning Interior Design</a></li>
+                        <li><a href="#">Contemporary Interior Design</a></li>
+                        <li><a href="#">Traditional Interior Design</a></li>
+                        <li><a href="#">Transitional Interior Design</a></li>
+                        <li><a href="#">Historic Preservation</a></li>
+                  	</ul>
+                </li>
+            </ul>
+        </div>
+        
+		<div class="clear"></div>
+  	</div>
+</div>
 
 </body>
 </html>
