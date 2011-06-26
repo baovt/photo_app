@@ -3,14 +3,17 @@
 		<div id="slides">
 			<div class="slide-wrapper">
 				<div class="slide-thumbnail">
-				  <%= image_tag("slide.jpg", :alt => "photo", :class => "shadow-img") %>
+				  <% if @featured_services.photos[0] then %>
+				    <%= image_tag(@featured_services.photos[0].image.url, :alt => "photo", :class => "shadow-img") %>
+				  <% end %>
 				</div>
 				<div class="slide-details">
-					<h2 class="font-em"><a href="#">Asian Bath</a></h2>
+					<h2 class="font-em"><a href="#"><%= @featured_services.name %></a></h2>
 					<div class="description">
-						<p>Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. </p>
-						<p>Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat</p>
-                        <a href="#" class="more">View Case Study »</a>
+					  <p>
+					  	<%= @featured_services.description %>
+						</p>
+             <a href="#" class="more">View Case Study »</a>
 					</div>
 				</div>
 				<div class="clear"></div>
@@ -55,26 +58,16 @@
     <div class="design-service">
     	<h3 class="head-big">DESIGN Services</h3>
         <ul class="services-list">
+          <% @design_services.each do |service|%>
         	<li>
-            	<a href="#"><%= image_tag("pic1.jpg", :alt => "photo", :class => "shadow-img") %></a>
-                <h2 class="font-em"><a href="#">Kitchen DESIGN</a></h2>
-                <div class="desc-servie">Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl.</div>
-            </li>
-            <li>
-            	<a href="#"><%= image_tag("pic2.jpg", :alt => "photo", :class => "shadow-img") %></a>
-                <h2 class="font-em"><a href="#">Kitchen DESIGN</a></h2>
-                <div class="desc-servie">Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl.</div>
-            </li>
-            <li>
-            	<a href="#"><%= image_tag("pic3.png", :alt => "photo", :class => "shadow-img") %></a>
-                <h2 class="font-em"><a href="#">Kitchen DESIGN</a></h2>
-                <div class="desc-servie">Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl.</div>
-            </li>
-            <li>
-            	<a href="#"><%= image_tag("pic1.jpg", :alt => "photo", :class => "shadow-img") %></a>
-                <h2 class="font-em"><a href="#">Kitchen DESIGN</a></h2>
-                <div class="desc-servie">Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl.</div>
-            </li>
+        	   <% if service.photos[0] then %>
+            	<a href="#"><%= image_tag(service.photos[0].image.url , :alt => "photo", :class => "shadow-img") %></a>
+            	<% end %>
+              <h2 class="font-em"><a href="#"><%= service.name %></a></h2>
+              <div class="desc-servie"><%= service.description %></div>
+          </li>
+           
+           <% end %>
         </ul>
     </div>
     
