@@ -3,8 +3,8 @@ class BasicController < ApplicationController
   end
 
   def index
-    @featured_services = Service.where(:featured => true).first
-    @design_services = Service.where(:featured => false).limit(4).offset(0)
+    @featured_services = Service.where(:featured => true).order("updated_at DESC").first
+    @design_services = Service.where(:featured => false).order("updated_at DESC").limit(4).offset(0)
   end
 
   def gallery_tags
