@@ -2,20 +2,20 @@
     	<h3 class="head-big">Featured Work</h3>
 		<div id="slides">
 			<div class="slide-wrapper">
-				<div class="slide-thumbnail">
-				  <% if @featured_services.photos[0] then %>
-				    <%= image_tag(@featured_services.photos[0].image.url, :alt => "photo", :class => "shadow-img") %>
-				  <% end %>
-				</div>
-				<div class="slide-details">
-					<h2 class="font-em"><a href="#"><%= @featured_services.name %></a></h2>
-					<div class="description">
-					  <p>
-					  	<%= @featured_services.description %>
-						</p>
-             <a href="#" class="more">View Case Study »</a>
-					</div>
-				</div>
+			 <% @photos.each do |photo| %>
+          <div class="slide-thumbnail">
+              <%= image_tag(photo.image.url, :alt => "photo", :class => "shadow-img") %>
+          </div>
+          <div class="slide-details">
+            <h2 class="font-em"><a href="#"><%= photo.name %></a></h2>
+            <div class="description">
+              <p>
+                <%= photo.caption %>
+              </p>
+               <a href="#" class="more">View Case Study »</a>
+            </div>
+          </div>
+				<% end %>
 				<div class="clear"></div>
 			</div>
 			
@@ -23,11 +23,7 @@
 		</div>
 			
 		<div id="myController">
-			<span class="jFlowPrev">&laquo;</span>
-			<span class="jFlowControl">1</span>
-			<span class="jFlowControl">2</span>
-			<span class="jFlowControl">3</span>
-			<span class="jFlowNext">&raquo;</span>
+		<%= will_paginate @photos, :previous_label     => '&laquo;',  :next_label     => '&raquo;', :class => "flickr_pagination" %>
 		</div>
 		<div class="clear"></div>
 	</div> <!--end content-slider-->

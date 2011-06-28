@@ -11,6 +11,7 @@ gem 'dynamic_form'
 gem 'haml'
 gem 'authlogic'
 gem 'paperclip'
+gem "will_paginate", "~> 3.0.pre2"
 
 # Use unicorn as the web server
 # gem 'unicorn'

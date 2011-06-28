@@ -24,7 +24,9 @@ class Admin::ServicesController < Admin::AdminController
   # GET /services/new
   def new
     @service = Service.new
+    2.times {
     @service.photos.build
+    }
     respond_to do |format|
       format.html # new.html.erb
     end
