@@ -5,8 +5,6 @@ class BasicController < ApplicationController
   def index
     @featured_service = Service.where(:featured => true).order("updated_at DESC").first
     @design_services = Service.where(:featured => false).order("updated_at DESC").limit(4).offset(0)
-    
-    @photos =  @featured_service.photos.paginate :page=>params[:page], :order=>'created_at desc', :per_page => 1
   end
 
   def gallery_tags

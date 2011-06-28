@@ -1,30 +1,51 @@
  <div class="content-slider">
     	<h3 class="head-big">Featured Work</h3>
-		<div id="slides">
-			<div class="slide-wrapper">
-			 <% @photos.each do |photo| %>
-          <div class="slide-thumbnail">
-              <%= image_tag(photo.image.url, :alt => "photo", :class => "shadow-img") %>
-          </div>
-          <div class="slide-details">
-            <h2 class="font-em"><a href="#"><%= photo.name %></a></h2>
-            <div class="description">
-              <p>
-                <%= photo.caption %>
-              </p>
-               <a href="#" class="more">View Case Study »</a>
+    <div id="slides"  style="display:none">
+			<div class="slide-wrapper">		
+		  <% j = -1 %>
+			 <% @featured_service.photos.each do |photo| %>
+			    <% j = j + 1 %>
+			    <div id="page<%= j%>">
+            <div class="slide-thumbnail">
+                <%= image_tag(photo.image.url, :alt => "photo", :class => "shadow-img") %>
+            </div>
+            <div class="slide-details">
+              <h2 class="font-em"><a href="#"><%= photo.name %></a></h2>
+              <div class="description">
+                <p>
+                  <%= photo.caption %>
+                </p>
+                 <a href="#" class="more">View Case Study »</a>
+              </div>
             </div>
           </div>
 				<% end %>
-				<div class="clear"></div>
-			</div>
-			
-			
 		</div>
-			
-		<div id="myController">
-		<%= will_paginate @photos, :previous_label     => '&laquo;',  :next_label     => '&raquo;', :class => "flickr_pagination" %>
 		</div>
+		<div id="slides">
+			<div class="slide-wrapper">		
+         
+        <dl id="Searchresult">
+        </dl>
+        <br style="clear:both;" />
+        <div id="Pagination" class="pagination">
+    
+         </div>
+    </div>    
+    </div>
+		<script>
+		  function handlePaginationClick(new_page_index, pagination_container) {
+          for(var i=new_page_index;i< 1+ new_page_index;i++) {
+              $('#Searchresult').html(document.getElementById('page'+i).innerHTML);
+          }
+          return false;
+      }
+      $('#Searchresult').html(document.getElementById('page'+0).innerHTML);
+		  $("#Pagination").pagination(<%= @featured_service.photos.count %>, {
+        items_per_page:1,
+        callback:handlePaginationClick
+        });
+		</script>
 		<div class="clear"></div>
 	</div> <!--end content-slider-->
     
